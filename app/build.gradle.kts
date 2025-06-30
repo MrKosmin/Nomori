@@ -48,6 +48,8 @@ dependencies {
 
     // Room (SQLite зручний API)
     implementation("androidx.room:room-runtime:2.6.1")
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.fragment)
     kapt("androidx.room:room-compiler:2.6.1")
 
     // Coroutines (для зручного async-коду)
