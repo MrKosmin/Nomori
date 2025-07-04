@@ -52,6 +52,7 @@ dependencies {
     implementation(libs.androidx.fragment)
     implementation(libs.material)
     implementation(libs.androidx.cardview)
+    implementation(libs.androidx.preference)
     kapt("androidx.room:room-compiler:2.6.1")
 
     // Coroutines (для зручного async-коду)
