@@ -18,28 +18,35 @@
         android:paddingTop="8dp"
         android:paddingBottom="8dp">
 
-        <SearchView
-            android:id="@+id/search_panel"
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:background="@drawable/search_background"
-            android:searchIcon="@drawable/search" />
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="59dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:background="#191C1E"
+            app:srcCompat="@drawable/back_button" />
+
+        <TextView
+            android:id="@+id/playlist_name_ep"
+            android:layout_width="384dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="marquee"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="Playlist name"
+            android:textColor="#D9D9D9"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:translationY="2.5dp" />
 
         <ImageButton
-            android:id="@+id/add_button"
+            android:id="@+id/three_dots_playlist"
             android:layout_width="42dp"
-            android:layout_height="34dp"
+            android:layout_height="32dp"
             android:layout_weight="1"
             android:background="#191C1E"
-            android:src="@drawable/add_button" />
-
-        <ImageButton
-            android:id="@+id/settings_button"
-            android:layout_width="41dp"
-            android:layout_height="34dp"
-            android:layout_weight="1"
-            android:background="#191C1E"
-            android:src="@drawable/settings_button" />
+            android:src="@drawable/three_dots" />
 
     </LinearLayout>
 
@@ -48,77 +55,30 @@
         android:layout_height="wrap_content"
         android:src="@drawable/line" />
 
-    <LinearLayout
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/filterTabLayout"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="48dp"
         android:background="#191C1E"
-        android:orientation="horizontal"
-        android:paddingLeft="8dp"
-        android:paddingTop="0dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/animeTitleTextView"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/primary"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/primary"
+        app:tabTextColor="@android:color/black">
 
-        <TextView
-            android:id="@+id/text_sorter_by"
-            android:layout_width="105dp"
-            android:layout_height="wrap_content"
-            android:text="Сортувати за:"
-            android:textColor="#828282"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:translationY="2.3dp"
-            android:visibility="visible" />
-
-        <ImageButton
-            android:id="@+id/recently_added_sorter"
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#191C1E"
-            android:src="@drawable/recently_added_sorter_indicator" />
+            android:text="Tab2" />
+    </com.google.android.material.tabs.TabLayout>
 
-        <ImageButton
-            android:id="@+id/alphabet_sorter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#191C1E"
-            android:src="@drawable/alphabet_sorter" />
-
-    </LinearLayout>
-
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="610dp"
-        android:padding="8dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#191C1E"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/playlist_button"
-                android:layout_width="295dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#191C1E"
-                android:padding="6dp"
-                android:text="Name"
-                android:textAlignment="viewStart"
-                android:textAllCaps="false"
-                android:textColor="#C5C5C5"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <ImageButton
-                android:id="@+id/three_dots_playlist"
-                android:layout_width="8dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#191C1E"
-                android:src="@drawable/three_dots" />
-        </LinearLayout>
-    </ScrollView>
+        android:layout_height="597dp" />
 
     <LinearLayout
         android:layout_width="411dp"

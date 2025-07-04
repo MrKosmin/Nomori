@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        tools:background="#191C1E">
+
+        <ImageView
+            android:id="@+id/episodeStatus"
+            android:layout_width="58dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/status_noreviewed" />
+
+        <TextView
+            android:id="@+id/episodeNumberTextView"
+            android:layout_width="261dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="marquee"
+            android:paddingLeft="8dp"
+            android:text="Серія 1"
+            android:textColor="#C5C5C5"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/three_dots_item_epsode"
+            android:layout_width="50dp"
+            android:layout_height="47dp"
+            android:layout_weight="1"
+            android:background="#191C1E"
+            app:srcCompat="@drawable/three_dots" />
+
+        <!-- Іконка переглянуто або статусу -->
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -26,12 +26,12 @@
             android:searchIcon="@drawable/search" />
 
         <ImageButton
-            android:id="@+id/add_button"
+            android:id="@+id/return_to_last_playlist"
             android:layout_width="42dp"
             android:layout_height="34dp"
             android:layout_weight="1"
             android:background="#191C1E"
-            android:src="@drawable/add_button" />
+            app:srcCompat="@drawable/return_to_last_playlist" />
 
         <ImageButton
             android:id="@+id/settings_button"
@@ -85,40 +85,9 @@
 
     </LinearLayout>
 
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="610dp"
-        android:padding="8dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#191C1E"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/playlist_button"
-                android:layout_width="295dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#191C1E"
-                android:padding="6dp"
-                android:text="Name"
-                android:textAlignment="viewStart"
-                android:textAllCaps="false"
-                android:textColor="#C5C5C5"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <ImageButton
-                android:id="@+id/three_dots_playlist"
-                android:layout_width="8dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#191C1E"
-                android:src="@drawable/three_dots" />
-        </LinearLayout>
-    </ScrollView>
+        android:layout_height="612dp" />
 
     <LinearLayout
         android:layout_width="411dp"
