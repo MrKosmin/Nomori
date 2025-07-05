@@ -96,14 +96,14 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/playlists_button_off"
+            android:id="@+id/playlists_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#191C1E"
             android:src="@drawable/playlists_button_indicator" />
 
         <ImageButton
-            android:id="@+id/history_button"
+            android:id="@+id/history_button_off"
             android:layout_width="140dp"
             android:layout_height="37dp"
             android:layout_weight="1"
