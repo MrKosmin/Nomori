@@ -1,21 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/controller_root"
+    android:id="@+id/playerControllerRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#66000000">
 
-    <!-- Назва відео зверху -->
-
-    <!-- Контролери знизу -->
-
+    <!-- Верхній бар: Назва плейлисту -->
     <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical">
+
+        <ImageButton
+            android:id="@+id/buttonBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/back_button_player" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingStart="8dp">
+
+            <TextView
+                android:id="@+id/textPlaylistName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Назва плейлисту"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:ellipsize="marquee"
+                android:singleLine="true" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textSeason"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Сезон 1"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:paddingEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/textEpisode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Серія 2"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Центр: кнопки відтворення -->
+    <LinearLayout
+        android:id="@+id/playbackControls"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#66000000"
-        android:gravity="center_horizontal|center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@android:color/transparent">
 
         <ImageButton
             android:id="@+id/buttonPrevious"
@@ -28,16 +85,15 @@
             android:id="@+id/buttonRewind"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:background="@android:color/transparent"
             app:srcCompat="@drawable/pl_buttonrewind" />
 
         <ImageButton
-            android:id="@+id/buttonPlay"
+            android:id="@+id/buttonPlayPause"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginHorizontal="16dp"
             android:background="@android:color/transparent"
             app:srcCompat="@drawable/pl_play_button" />
 
@@ -45,7 +101,7 @@
             android:id="@+id/buttonFastForward"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
             android:background="@android:color/transparent"
             app:srcCompat="@drawable/pl_buttonfastforward" />
 
@@ -57,175 +113,114 @@
             app:srcCompat="@drawable/pl_buttonnext" />
     </LinearLayout>
 
+    <!-- Нижній бар -->
     <LinearLayout
+        android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:orientation="vertical"
-        android:padding="8dp">
+        android:padding="12dp">
 
-        <!-- SeekBar -->
+        <!-- Верх: індикатори -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:gravity="right"
+            android:gravity="center_vertical|end"
             android:orientation="horizontal"
-            android:paddingRight="0dp">
+            android:paddingBottom="4dp">
 
             <ImageView
-                android:id="@+id/batteryIcon"
+                android:id="@+id/imageBattery"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/ic_battery_100" />
 
             <TextView
-                android:id="@+id/batteryPercent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginRight="8dp"
-                android:text="100%"
-                android:textColor="#D9D9D9"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/systemClockTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="23:45"
-                android:textColor="#D9D9D9"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-
-        <SeekBar
-            android:id="@+id/exo_progress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:progressBackgroundTint="#828282"
-            android:progressTint="#008200"
-            android:thumbTint="#008200" />
-
-        <!-- Таймер + кнопки -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingTop="4dp">
-
-            <!-- Позиція -->
-            <TextView
-                android:id="@+id/exo_position"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="00:00"
-                android:textColor="@android:color/white" />
-
-            <!-- Розділювач -->
-            <TextView
+                android:id="@+id/textBatteryPercent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="4dp"
-                android:paddingEnd="4dp"
-                android:text="/"
-                android:textColor="@android:color/white" />
+                android:paddingEnd="8dp"
+                android:text="100%"
+                android:textColor="#D9D9D9"
+                android:textSize="14sp" />
 
-            <!-- Тривалість -->
             <TextView
-                android:id="@+id/exo_duration"
+                android:id="@+id/textClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23:45"
+                android:textColor="#D9D9D9"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Seekbar -->
+        <SeekBar
+            android:id="@+id/seekBarProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progressTint="#00AA00"
+            android:thumbTint="#00AA00"
+            android:progressBackgroundTint="#444444" />
+
+        <!-- Позиція/тривалість і кнопки -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingTop="4dp">
+
+            <TextView
+                android:id="@+id/textCurrentPosition"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="00:00"
-                android:textColor="@android:color/white" />
+                android:textColor="#FFFFFF" />
 
-            <!-- Простір -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/"
+                android:textColor="#FFFFFF"
+                android:paddingHorizontal="4dp" />
+
+            <TextView
+                android:id="@+id/textDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textColor="#FFFFFF" />
+
             <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_weight="1" />
 
-            <!-- Кнопки -->
             <ImageButton
-                android:id="@+id/speedControlerPlayer"
+                android:id="@+id/buttonSpeed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 app:srcCompat="@drawable/speed_controller" />
 
             <ImageButton
-                android:id="@+id/lockButtonPlayer"
+                android:id="@+id/buttonLock"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
                 android:background="@android:color/transparent"
+                android:layout_marginStart="8dp"
                 app:srcCompat="@drawable/lock_button" />
 
             <ImageButton
-                android:id="@+id/settingButtonPlayer"
+                android:id="@+id/buttonSettings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:background="@android:color/transparent"
                 app:srcCompat="@drawable/settings_button_player" />
         </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/backButtonPlayer"
-            android:layout_width="38dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:background="@android:color/transparent"
-            app:srcCompat="@drawable/back_button_player" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingLeft="8dp">
-
-            <TextView
-                android:id="@+id/playlistNamePlayer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ellipsize="marquee"
-                android:text="Назва плейлисту"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/seasonenumberplayer2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingEnd="8dp"
-                    android:text="Сезон 1"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/episodenumberplayer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Серія 2"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </LinearLayout>
-
     </LinearLayout>
 
 </FrameLayout>

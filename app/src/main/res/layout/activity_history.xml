@@ -7,7 +7,6 @@
     android:orientation="vertical">
 
     <!-- Верхня панель -->
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -17,15 +16,15 @@
         android:gravity="center_vertical">
 
         <ImageButton
-            android:id="@+id/backButton"
+            android:id="@+id/historyBackButton"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="#191C1E"
+            android:background="@android:color/transparent"
             app:srcCompat="@drawable/back_button"
             android:contentDescription="Назад" />
 
         <TextView
-            android:id="@+id/historyTitle"
+            android:id="@+id/historyTitleText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -36,57 +35,59 @@
             android:gravity="center" />
 
         <ImageButton
-            android:id="@+id/settingsButton"
-            android:layout_width="41dp"
+            android:id="@+id/historySettingsButton"
+            android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="#191C1E"
+            android:background="@android:color/transparent"
             android:contentDescription="Налаштування"
-            android:src="@drawable/settings_button" />
+            app:srcCompat="@drawable/settings_button" />
     </LinearLayout>
 
-    <!-- Лінія -->
+    <!-- Роздільна лінія -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/line" />
 
-    <!-- Список історії -->
+    <!-- Список історії з SwipeRefresh -->
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipeRefreshLayout"
+        android:id="@+id/historySwipeRefreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="641dp"
+        android:layout_height="0dp"
         android:layout_weight="1">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/historyRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:clipToPadding="false"
             android:padding="8dp" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
+    <!-- Нижня панель навігації -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="38dp"
+        android:layout_height="48dp"
         android:background="#191C1E"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center_vertical">
 
         <ImageButton
-            android:id="@+id/playlists_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#191C1E"
-            android:src="@drawable/playlists_button" />
-
-        <ImageButton
-            android:id="@+id/history_button_off"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/playlistsButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#191C1E"
-            android:src="@drawable/history_button_indicator" />
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/playlists_button" />
 
+        <ImageButton
+            android:id="@+id/historyButtonActive"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/history_button_indicator" />
     </LinearLayout>
 
 </LinearLayout>

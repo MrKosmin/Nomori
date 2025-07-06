@@ -7,25 +7,28 @@
     android:orientation="vertical"
     android:padding="0dp">
 
+    <!-- Верхня панель -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="#191C1E"
         android:orientation="horizontal"
-        android:paddingTop="8dp">
+        android:paddingTop="8dp"
+        android:gravity="center_vertical">
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/buttonBack"
             android:layout_width="36dp"
             android:layout_height="32dp"
-            android:layout_weight="1"
             android:background="#191C1E"
             app:srcCompat="@drawable/back_button" />
 
         <TextView
-            android:layout_width="343dp"
-            android:layout_height="32dp"
-            android:layout_marginBottom="24dp"
+            android:id="@+id/textSettingsTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginBottom="4dp"
             android:paddingLeft="8dp"
             android:text="Налаштування"
             android:textColor="#D9D9D9"
@@ -34,14 +37,14 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/dividerLine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/line" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1">
 
         <LinearLayout
@@ -51,151 +54,81 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp">
 
+            <!-- Статус акаунту -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="#191C1E"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:gravity="center_horizontal">
 
                 <TextView
-                    android:id="@+id/accountStatusTextView"
+                    android:id="@+id/textAccountStatus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_marginTop="8dp"
                     android:text="Не авторизовано"
                     android:textColor="#C5C5C5"
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/accountActionButton"
+                    android:id="@+id/buttonAccountAction"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal|center_vertical"
                     android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
                     android:background="#181A1C"
                     android:text="Увійти"
                     android:textColor="#C5C5C5"
                     android:textStyle="bold" />
             </LinearLayout>
 
+            <!-- Жести перемотування -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
                 android:background="#191C1E"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="8dp">
 
                 <TextView
+                    android:id="@+id/textGestures"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Жести перемотування:"
                     android:textColor="#C5C5C5"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="3dp"
-                    android:background="#191C1E"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="264dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Подвійний тап (сек.):"
-                        android:textColor="#AAAAAA"
-                        android:textSize="16sp" />
-
-                    <EditText
-                        android:id="@+id/inputDoubleTap"
-                        android:layout_width="86dp"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="#444444"
-                        android:gravity="center"
-                        android:inputType="number"
-                        android:padding="4dp"
-                        android:text="10"
-                        android:textColor="#FFFFFF" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:background="#191C1E"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="234dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Довгий тап (сек.):"
-                        android:textColor="#AAAAAA" />
-
-                    <EditText
-                        android:id="@+id/inputDoubleTap3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:backgroundTint="#444444"
-                        android:gravity="center"
-                        android:inputType="number"
-                        android:padding="4dp"
-                        android:text="10"
-                        android:textColor="#FFFFFF" />
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="#191C1E"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Буферизація:"
-                    android:textColor="#C5C5C5"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginBottom="4dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="208dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:text="Мінімум (сек.):"
-                        android:textColor="#AAAAAA" />
+                        android:layout_height="wrap_content"
+                        android:text="Подвійний тап (сек.):"
+                        android:textColor="#AAAAAA"
+                        android:textSize="16sp" />
 
                     <EditText
-                        android:id="@+id/inputDoubleTap4"
-                        android:layout_width="3dp"
+                        android:id="@+id/inputDoubleTapSeconds"
+                        android:layout_width="60dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:backgroundTint="#444444"
                         android:gravity="center"
                         android:inputType="number"
                         android:padding="4dp"
                         android:text="10"
                         android:textColor="#FFFFFF" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -206,41 +139,116 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="208dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:text="Максимум (сек.):"
-                        android:textColor="#AAAAAA" />
+                        android:layout_height="wrap_content"
+                        android:text="Довгий тап (сек.):"
+                        android:textColor="#AAAAAA"
+                        android:textSize="16sp" />
 
                     <EditText
-                        android:id="@+id/inputDoubleTap5"
-                        android:layout_width="3dp"
+                        android:id="@+id/inputLongTapSeconds"
+                        android:layout_width="60dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:backgroundTint="#444444"
                         android:gravity="center"
                         android:inputType="number"
                         android:padding="4dp"
                         android:text="10"
                         android:textColor="#FFFFFF" />
-
                 </LinearLayout>
-
             </LinearLayout>
 
+            <!-- Буферизація -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:background="#191C1E"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="8dp">
 
                 <TextView
+                    android:id="@+id/textBuffering"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Буферизація:"
+                    android:textColor="#C5C5C5"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Мінімум (сек.):"
+                        android:textColor="#AAAAAA"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/inputBufferMin"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#444444"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:padding="4dp"
+                        android:text="10"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Максимум (сек.):"
+                        android:textColor="#AAAAAA"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/inputBufferMax"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#444444"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:padding="4dp"
+                        android:text="10"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Відсоток відмітки перегляду -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="#191C1E"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/textMarkPercentage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Співвідношення часу, при якому серія буде відзначена переглянутою:"
                     android:textColor="#C5C5C5"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -250,27 +258,26 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="203dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_weight="1"
+                        android:layout_height="wrap_content"
                         android:text="Відсоток (%):"
-                        android:textColor="#AAAAAA" />
+                        android:textColor="#AAAAAA"
+                        android:textSize="16sp" />
 
                     <EditText
-                        android:id="@+id/inputDoubleTap6"
-                        android:layout_width="3dp"
+                        android:id="@+id/inputMarkPercentage"
+                        android:layout_width="60dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:backgroundTint="#444444"
                         android:gravity="center"
                         android:inputType="number"
                         android:padding="4dp"
                         android:text="10"
                         android:textColor="#FFFFFF" />
-
                 </LinearLayout>
-
             </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 

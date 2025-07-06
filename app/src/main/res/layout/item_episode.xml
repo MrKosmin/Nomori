@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
@@ -11,39 +10,40 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?android:attr/selectableItemBackground"
+        android:background="#191C1E"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="12dp"
-        tools:background="#191C1E">
+        android:padding="12dp">
 
+        <!-- Статус перегляду -->
         <ImageView
-            android:id="@+id/episodeStatus"
-            android:layout_width="58dp"
+            android:id="@+id/imageEpisodeStatus"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:contentDescription="@string/episode_status"
             app:srcCompat="@drawable/status_noreviewed" />
 
+        <!-- Назва серії -->
         <TextView
-            android:id="@+id/episodeNumberTextView"
-            android:layout_width="261dp"
+            android:id="@+id/textEpisodeTitle"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
             android:layout_weight="1"
-            android:ellipsize="marquee"
-            android:paddingLeft="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:text="Серія 1"
             android:textColor="#C5C5C5"
             android:textSize="16sp"
             android:textStyle="bold" />
 
+        <!-- Меню -->
         <ImageButton
-            android:id="@+id/three_dots_item_epsode"
-            android:layout_width="50dp"
-            android:layout_height="47dp"
-            android:layout_weight="1"
-            android:background="#191C1E"
+            android:id="@+id/buttonEpisodeMenu"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/episode_menu"
             app:srcCompat="@drawable/three_dots" />
-
-        <!-- Іконка переглянуто або статусу -->
     </LinearLayout>
 </androidx.cardview.widget.CardView>

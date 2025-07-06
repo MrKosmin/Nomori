@@ -1,48 +1,63 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:gravity="center"
-    android:background="#171B1B">
+    android:background="#171B1B"
+    android:fillViewport="true">
 
-    <EditText
-        android:id="@+id/emailEditText"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
-        android:textColorHint="#888"
-        android:textColor="#fff"
-        android:backgroundTint="#444"
-        android:inputType="textEmailAddress" />
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="vertical"
+        android:padding="24dp">
 
-    <EditText
-        android:id="@+id/passwordEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Пароль"
-        android:textColorHint="#888"
-        android:textColor="#fff"
-        android:backgroundTint="#444"
-        android:inputType="textPassword"
-        android:layout_marginTop="12dp" />
+        <!-- Email -->
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#444444"
+            android:drawableStart="@android:drawable/ic_dialog_email"
+            android:drawablePadding="8dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#888888" />
 
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Увійти"
-        android:textColor="#fff"
-        android:backgroundTint="#444"
-        android:layout_marginTop="24dp" />
+        <!-- Пароль -->
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#444444"
+            android:drawableStart="@android:drawable/ic_lock_idle_lock"
+            android:drawablePadding="8dp"
+            android:hint="Пароль"
+            android:inputType="textPassword"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#888888" />
 
-    <Button
-        android:id="@+id/backbuttonlogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:backgroundTint="#444"
-        android:text="Назад"
-        android:textColor="#fff" />
+        <!-- Кнопка входу -->
+        <Button
+            android:id="@+id/buttonLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#00AAFF"
+            android:text="Увійти"
+            android:textColor="#FFFFFF" />
 
-</LinearLayout>
+        <!-- Кнопка назад -->
+        <Button
+            android:id="@+id/buttonBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#444444"
+            android:text="Назад"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+</ScrollView>

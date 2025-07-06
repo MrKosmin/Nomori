@@ -2,68 +2,64 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_episode_list"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#171B1B"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="0dp">
+    android:orientation="vertical">
 
+    <!-- Верхня панель -->
     <LinearLayout
+        android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#191C1E"
+        android:padding="8dp"
         android:orientation="horizontal"
-        android:paddingLeft="8dp"
-        android:paddingTop="8dp"
-        android:paddingRight="8dp"
-        android:paddingBottom="8dp">
+        android:gravity="center_vertical">
 
         <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="59dp"
-            android:layout_height="32dp"
-            android:layout_weight="1"
-            android:background="#191C1E"
+            android:id="@+id/buttonBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
             app:srcCompat="@drawable/back_button" />
 
         <TextView
-            android:id="@+id/playlist_name_ep"
-            android:layout_width="384dp"
+            android:id="@+id/textPlaylistName"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:layout_weight="1"
             android:ellipsize="marquee"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:text="Playlist name"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:text="Назва плейлисту"
             android:textColor="#D9D9D9"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:translationY="2.5dp" />
+            android:textStyle="bold" />
 
         <ImageButton
-            android:id="@+id/three_dots_playlist"
-            android:layout_width="42dp"
-            android:layout_height="32dp"
-            android:layout_weight="1"
-            android:background="#191C1E"
+            android:id="@+id/buttonOptions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
             android:src="@drawable/three_dots" />
-
     </LinearLayout>
 
-    <ImageView
+    <!-- Лінія -->
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/line" />
+        android:layout_height="2dp"
+        android:background="@drawable/line" />
 
+    <!-- Табів -->
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/filterTabLayout"
+        android:id="@+id/tabLayoutFilter"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="45dp"
         android:background="#191C1E"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/animeTitleTextView"
         app:tabGravity="fill"
         app:tabIndicatorColor="@color/primary"
         app:tabMode="fixed"
@@ -71,44 +67,51 @@
         app:tabTextColor="@android:color/black">
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/tabItem"
+            android:id="@+id/tabItemAll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tab2" />
+            android:text="Усі" />
     </com.google.android.material.tabs.TabLayout>
 
+    <!-- Контент з оновленням -->
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeRefreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="594dp"
+        android:layout_height="0dp"
         android:layout_weight="1">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="597dp" />
+            android:id="@+id/recyclerEpisodeList"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="4dp" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
+    <!-- Нижнє меню -->
     <LinearLayout
-        android:layout_width="411dp"
+        android:id="@+id/bottomMenu"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#191C1E"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="4dp"
+        android:gravity="center">
 
         <ImageButton
-            android:id="@+id/playlists_button"
-            android:layout_width="wrap_content"
+            android:id="@+id/buttonPlaylists"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="#191C1E"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
             android:src="@drawable/playlists_button_indicator" />
 
         <ImageButton
-            android:id="@+id/history_button_off"
-            android:layout_width="140dp"
-            android:layout_height="37dp"
+            android:id="@+id/buttonHistory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#191C1E"
+            android:background="@android:color/transparent"
             android:src="@drawable/history_button" />
-
     </LinearLayout>
 
 </LinearLayout>
