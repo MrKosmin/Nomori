@@ -206,18 +206,10 @@
                 app:srcCompat="@drawable/speed_controller" />
 
             <ImageButton
-                android:id="@+id/buttonLock"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:layout_marginStart="8dp"
-                app:srcCompat="@drawable/lock_button" />
-
-            <ImageButton
                 android:id="@+id/buttonSettings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="16dp"
                 android:background="@android:color/transparent"
                 app:srcCompat="@drawable/settings_button_player" />
         </LinearLayout>

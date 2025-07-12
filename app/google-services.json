@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1074193431128",
+    "project_id": "nomori-80041",
+    "storage_bucket": "nomori-80041.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1074193431128:android:5ef5860519d01ef2db282d",
+        "android_client_info": {
+          "package_name": "com.lowmemory.nomori"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIXbz_5U7qINb3q8kBdCsbP7XyeCdTwEU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

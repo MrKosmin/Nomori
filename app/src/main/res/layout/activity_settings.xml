@@ -220,7 +220,7 @@
                         android:textSize="16sp" />
 
                     <EditText
-                        android:id="@+id/inputBufferMax"
+                        android:id="@+id/inputBufferRewinding"
                         android:layout_width="60dp"
                         android:layout_height="wrap_content"
                         android:backgroundTint="#444444"
@@ -230,6 +230,7 @@
                         android:text="10"
                         android:textColor="#FFFFFF" />
                 </LinearLayout>
+
             </LinearLayout>
 
             <!-- Відсоток відмітки перегляду -->

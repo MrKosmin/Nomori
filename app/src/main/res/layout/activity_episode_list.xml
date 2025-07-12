@@ -88,30 +88,5 @@
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <!-- Нижнє меню -->
-    <LinearLayout
-        android:id="@+id/bottomMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#191C1E"
-        android:orientation="horizontal"
-        android:padding="4dp"
-        android:gravity="center">
-
-        <ImageButton
-            android:id="@+id/buttonPlaylists"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:src="@drawable/playlists_button_indicator" />
-
-        <ImageButton
-            android:id="@+id/buttonHistory"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:src="@drawable/history_button" />
-    </LinearLayout>
 
 </LinearLayout>

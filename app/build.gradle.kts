@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     id("org.jetbrains.kotlin.kapt")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -53,6 +54,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.cardview)
     implementation(libs.androidx.preference)
+    implementation(libs.firebase.firestore.ktx)
     kapt("androidx.room:room-compiler:2.6.1")
 
     // Coroutines (для зручного async-коду)
@@ -84,4 +86,9 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+
+    implementation(platform("com.google.firebase:firebase-bom:33.16.0"))
+    implementation("com.google.firebase:firebase-analytics-ktx")
+    implementation("com.google.firebase:firebase-firestore-ktx:24.10.1")
+
 }
